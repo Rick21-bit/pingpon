@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PingPON - AI Learns Ping Pong</title>
+  <meta name="description" content="Watch an AI learn to play ping pong in real time using a genetic algorithm and neural networks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="brand">PingPON</div>
+    <div>
+      <a href="index.html" class="active">Play</a>
+      <a href="learn.html">Learn</a>
+    </div>
+  </nav>
+
+  <main>
+    <div>
+      <div class="game-card">
+        <canvas id="game" width="720" height="420"></canvas>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="stats">
+        <div class="stat">
+          <h4>Generation</h4>
+          <p id="gen">1</p>
+        </div>
+        <div class="stat">
+          <h4>Member</h4>
+          <p id="member">1</p>
+        </div>
+        <div class="stat">
+          <h4>Hits</h4>
+          <p id="hits">0</p>
+        </div>
+        <div class="stat">
+          <h4>Best Fitness</h4>
+          <p id="best">0</p>
+        </div>
+      </div>
+
+      <button id="pause">Pause</button>
+      <button id="new-session" class="accent">New Session</button>
+
+      <div class="visualizer">
+        <h3>Neural Network</h3>
+        <canvas id="net-canvas"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Session progress is saved in your browser so you can return later.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

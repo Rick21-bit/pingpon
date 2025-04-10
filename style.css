@@ -1,0 +1,135 @@
+:root {
+  --bg: #0b0d10;
+  --surface: #12151b;
+  --text: #f0f1f3;
+  --muted: #8b909a;
+  --accent: #60a5fa;
+  --accent-2: #22d3ee;
+  --danger: #f87171;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  background: var(--surface);
+  border-bottom: 1px solid #1f232b;
+}
+
+nav .brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 0.95rem;
+}
+
+nav a:hover, nav a.active { color: var(--text); }
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  padding: 28px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; }
+}
+
+.game-card, .panel {
+  background: var(--surface);
+  border: 1px solid #1f232b;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  background: #08090d;
+  border-radius: 8px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat h4 {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.stat p {
+  margin: 6px 0 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+button {
+  background: #1f2937;
+  color: var(--text);
+  border: 1px solid #374151;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+button:hover { background: #273142; }
+button.accent { background: var(--accent); color: #0b0d10; border-color: var(--accent); }
+button.accent:hover { filter: brightness(1.1); }
+
+.visualizer {
+  margin-top: 18px;
+}
+
+.visualizer h3 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+#net-canvas {
+  background: transparent;
+  height: 240px;
+}
+
+.learn {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.learn h1 { color: var(--accent); }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 30px;
+  font-size: 0.85rem;
+}
