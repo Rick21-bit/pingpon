@@ -6,6 +6,7 @@
   --accent: #60a5fa;
   --accent-2: #22d3ee;
   --danger: #f87171;
+  --border: #1f232b;
 }
 
 * { box-sizing: border-box; }
@@ -23,7 +24,7 @@ nav {
   align-items: center;
   padding: 18px 28px;
   background: var(--surface);
-  border-bottom: 1px solid #1f232b;
+  border-bottom: 1px solid var(--border);
 }
 
 nav .brand {
@@ -43,20 +44,20 @@ nav a:hover, nav a.active { color: var(--text); }
 
 main {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 360px;
   gap: 24px;
   padding: 28px;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   main { grid-template-columns: 1fr; }
 }
 
 .game-card, .panel {
   background: var(--surface);
-  border: 1px solid #1f232b;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 18px;
 }
@@ -72,7 +73,7 @@ canvas {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .stat h4 {
@@ -84,8 +85,38 @@ canvas {
 
 .stat p {
   margin: 6px 0 0;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
+}
+
+select, input[type="range"] {
+  width: 100%;
+  background: #08090d;
+  color: var(--text);
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font: inherit;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.controls label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
 button {
@@ -96,8 +127,6 @@ button {
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
-  margin-right: 8px;
-  margin-bottom: 8px;
 }
 
 button:hover { background: #273142; }
@@ -119,13 +148,18 @@ button.accent:hover { filter: brightness(1.1); }
   height: 240px;
 }
 
-.learn {
+#graph-canvas {
+  background: transparent;
+  height: 160px;
+}
+
+.learn, .arena-help {
   max-width: 760px;
   margin: 0 auto;
   padding: 40px 24px;
 }
 
-.learn h1 { color: var(--accent); }
+.learn h1, .arena-help h1 { color: var(--accent); }
 
 footer {
   text-align: center;

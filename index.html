@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PingPON - AI Learns Ping Pong</title>
-  <meta name="description" content="Watch an AI learn to play ping pong in real time using a genetic algorithm and neural networks." />
+  <title>PingPON - Neuro-Evolution Lab</title>
+  <meta name="description" content="Train neural networks to play ping pong with genetic algorithms. Watch, play, and export AI players." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
@@ -13,7 +13,8 @@
   <nav>
     <div class="brand">PingPON</div>
     <div>
-      <a href="index.html" class="active">Play</a>
+      <a href="index.html" class="active">Lab</a>
+      <a href="arena.html">Arena</a>
       <a href="learn.html">Learn</a>
     </div>
   </nav>
@@ -21,44 +22,60 @@
   <main>
     <div>
       <div class="game-card">
-        <canvas id="game" width="720" height="420"></canvas>
+        <canvas id="game" width="760" height="440"></canvas>
       </div>
     </div>
 
     <div class="panel">
       <div class="stats">
-        <div class="stat">
-          <h4>Generation</h4>
-          <p id="gen">1</p>
-        </div>
-        <div class="stat">
-          <h4>Member</h4>
-          <p id="member">1</p>
-        </div>
-        <div class="stat">
-          <h4>Hits</h4>
-          <p id="hits">0</p>
-        </div>
-        <div class="stat">
-          <h4>Best Fitness</h4>
-          <p id="best">0</p>
+        <div class="stat"><h4>Generation</h4><p id="gen">1</p></div>
+        <div class="stat"><h4>Member</h4><p id="member">1 / 24</p></div>
+        <div class="stat"><h4>Hits</h4><p id="hits">0</p></div>
+        <div class="stat"><h4>Best</h4><p id="best">0</p></div>
+        <div class="stat"><h4>Avg</h4><p id="avg">0</p></div>
+        <div class="stat"><h4>Mode</h4>
+          <select id="mode">
+            <option value="train">Train</option>
+            <option value="best">Watch Best</option>
+            <option value="ai-vs-ai">AI vs AI</option>
+          </select>
         </div>
       </div>
 
-      <button id="pause">Pause</button>
-      <button id="new-session" class="accent">New Session</button>
+      <div class="controls">
+        <label for="speed">Sim speed: <span id="speedVal">1</span>x</label>
+        <input id="speed" type="range" min="1" max="32" value="1" />
+      </div>
+
+      <div class="actions">
+        <button id="pause">Pause</button>
+        <button id="reset">Reset Ball</button>
+        <button id="save-brain">Export Brain</button>
+        <button id="new-session" class="accent">New Session</button>
+      </div>
 
       <div class="visualizer">
         <h3>Neural Network</h3>
         <canvas id="net-canvas"></canvas>
       </div>
+
+      <div class="visualizer">
+        <h3>Fitness History</h3>
+        <canvas id="graph-canvas"></canvas>
+      </div>
     </div>
   </main>
 
   <footer>
-    Session progress is saved in your browser so you can return later.
+    PingPON v2 — modular neuro-evolution playground. Session saved locally in your browser.
   </footer>
 
+  <script src="src/NeuralNet.js"></script>
+  <script src="src/Game.js"></script>
+  <script src="src/Population.js"></script>
+  <script src="src/Renderer.js"></script>
+  <script src="src/Storage.js"></script>
+  <script src="src/UI.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
