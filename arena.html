@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PingPON - Arena</title>
+  <meta name="description" content="Play ping pong against the best trained AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="brand">PingPON</div>
+    <div>
+      <a href="index.html">Lab</a>
+      <a href="arena.html" class="active">Arena</a>
+      <a href="learn.html">Learn</a>
+    </div>
+  </nav>
+
+  <main>
+    <div>
+      <div class="game-card">
+        <canvas id="game" width="760" height="440"></canvas>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="stats">
+        <div class="stat"><h4>You</h4><p id="leftScore">0</p></div>
+        <div class="stat"><h4>AI</h4><p id="rightScore">0</p></div>
+        <div class="stat"><h4>Best Gen</h4><p id="bestGen">-</p></div>
+        <div class="stat"><h4>Fitness</h4><p id="bestFit">-</p></div>
+      </div>
+
+      <div class="actions">
+        <button id="reset">Reset Match</button>
+        <button id="import-brain" class="accent">Import Brain</button>
+        <input type="file" id="brain-file" accept="application/json" style="display:none">
+      </div>
+
+      <div class="arena-help">
+        <h3>Controls</h3>
+        <p>Use <strong>W / S</strong> or <strong>↑ / ↓</strong> to move the left paddle.</p>
+        <p>The right paddle is controlled by the best network from your training session. Train in the Lab, then return here to challenge it.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Train in the Lab, then fight your AI in the Arena.
+  </footer>
+
+  <script src="src/NeuralNet.js"></script>
+  <script src="src/Game.js"></script>
+  <script src="src/Storage.js"></script>
+  <script src="arena.js"></script>
+</body>
+</html>
