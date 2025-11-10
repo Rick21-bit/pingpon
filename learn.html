@@ -13,26 +13,27 @@
   <nav>
     <div class="brand">PingPON</div>
     <div>
-      <a href="index.html">Play</a>
+      <a href="index.html">Lab</a>
+      <a href="arena.html">Arena</a>
       <a href="learn.html" class="active">Learn</a>
     </div>
   </nav>
 
   <article class="learn">
-    <h1>How the AI learns</h1>
+    <h1>How PingPON learns</h1>
 
     <h2>Genetic Algorithm</h2>
     <p>A genetic algorithm mimics natural selection. Instead of writing rules for the paddle, we create a population of random neural networks and let them compete.</p>
     <ul>
-      <li><strong>Population:</strong> 16 neural networks, each with different weights.</li>
-      <li><strong>Fitness:</strong> each network plays ping pong for a short round. Networks that hit the ball more often get higher fitness scores.</li>
-      <li><strong>Selection:</strong> the best performers survive to the next generation.</li>
-      <li><strong>Crossover and mutation:</strong> surviving networks combine their weights and add small random changes.</li>
+      <li><strong>Population:</strong> 24 neural networks, each with different weights.</li>
+      <li><strong>Fitness:</strong> each network plays a short round. Networks that hit the ball more often and miss less get higher scores.</li>
+      <li><strong>Selection:</strong> the top 25% survive to the next generation.</li>
+      <li><strong>Crossover and mutation:</strong> surviving networks combine weights and add small random changes.</li>
     </ul>
-    <p>Over many generations the population gets better at keeping the ball in play.</p>
+    <p>Over many generations the population learns to track the ball and anticipate bounces.</p>
 
     <h2>Neural Network</h2>
-    <p>Each paddle controller is a tiny neural network. It receives five inputs:</p>
+    <p>Each paddle controller is a feed-forward network. The right-paddle AI receives five inputs:</p>
     <ul>
       <li>Ball horizontal position</li>
       <li>Ball vertical position</li>
@@ -40,17 +41,17 @@
       <li>Ball vertical velocity</li>
       <li>Current paddle position</li>
     </ul>
-    <p>The inputs flow through a hidden layer of neurons and produce one output: the direction and speed the paddle should move.</p>
+    <p>The inputs flow through a hidden layer and produce one output: the direction and speed the paddle should move.</p>
 
-    <h2>Why it fails first</h2>
-    <p>Early generations move almost randomly. The ball often flies past the paddle. As fitter networks reproduce, the population learns patterns like tracking the ball and anticipating bounces. The failures are a normal part of learning.</p>
+    <h2>Lab, Arena, and AI vs AI</h2>
+    <p>The <strong>Lab</strong> trains the population, shows the live network, and plots fitness over time. The <strong>Arena</strong> lets you play against the best saved brain. <strong>AI vs AI</strong> lets two copies of the best brain compete, with the left side using mirrored inputs.</p>
 
-    <h2>Sessions</h2>
-    <p>Your current generation and best network are saved in the browser. Press "New Session" on the play page to start over from scratch.</p>
+    <h2>Sessions and Exports</h2>
+    <p>Your current generation and best network are saved in the browser. You can also export the best brain as a JSON file and import it into the Arena on another device.</p>
   </article>
 
   <footer>
-    <a href="index.html">Back to simulation</a>
+    <a href="index.html">Back to lab</a> — <a href="arena.html">Try the arena</a>
   </footer>
 </body>
 </html>

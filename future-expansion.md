@@ -1,19 +1,36 @@
 # Future Expansion - PingPON
 
-PingPON is designed to be a public demonstration of neuro-evolution.
+PingPON is a public demonstration of neuro-evolution.
 
-## Phase 1 - Better game
-- Add AI vs AI mode.
-- Add sound effects and smoother paddle animations.
+## Shipped in v2
 
-## Phase 2 - Advanced neuro-evolution
-- Replace simple genetic algorithm with NEAT.
-- Let users design their own network architecture.
+- Modular engine: NeuralNet, Game, Population, Renderer, Storage, UI
+- Train/watch/AI-vs-AI modes on the lab page
+- Human vs AI arena with keyboard controls
+- Fitness history graph
+- Brain export / import
+- Session persistence with localStorage
 
-## Phase 3 - Cloud sessions
-- Persist sessions in a database so users can share training runs.
-- Add leaderboards for highest generation reached.
+## Phase 3 — Advanced neuro-evolution
 
-## Phase 4 - Education platform
-- Create guided lessons on reinforcement learning and neuro-evolution.
-- Export trained brains and let others play against them.
+- Replace simple GA with NEAT so topology evolves as well as weights
+- Add multiple hidden layers and let users pick the network shape
+- Implement speciation and novelty search to avoid local optima
+
+## Phase 4 — Cloud and social features
+
+- Persist sessions in a backend database so users can share training runs
+- Add leaderboards for highest generation, best fitness, and longest rallies
+- Export trained brains to a public registry
+
+## Phase 5 — Multiplayer and competitions
+
+- Host AI-vs-AI tournaments between community-submitted brains
+- Create guided lessons on reinforcement learning and genetic algorithms
+- Build a mobile app wrapper for the arena and lab
+
+## Phase 6 — Product ideas
+
+- Educational SaaS for teaching ML concepts to beginners
+- SDK that lets other games plug in the same neuro-evolution engine
+- Self-hosted training server with long-running experiments

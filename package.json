@@ -1,0 +1,19 @@
+{
+  "name": "pingpon",
+  "version": "2.0.0",
+  "description": "A neuro-evolution playground where neural networks learn to play ping pong in the browser.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 8080 -o",
+    "test": "node tests/smoke.js"
+  },
+  "keywords": [
+    "neuroevolution",
+    "genetic-algorithm",
+    "neural-network",
+    "ping-pong",
+    "game",
+    "ai"
+  ],
+  "license": "MIT"
+}
