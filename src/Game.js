@@ -69,12 +69,12 @@ class Game {
     if (this.collide(b, l)) {
       b.vx = Math.abs(b.vx) * 1.05;
       b.x = l.x + l.w + b.r;
-      b = this.applyPaddleSpin(b, l);
+      this.applyPaddleSpin(b, l);
     }
     if (this.collide(b, r)) {
       b.vx = -Math.abs(b.vx) * 1.05;
       b.x = r.x - b.r;
-      b = this.applyPaddleSpin(b, r);
+      this.applyPaddleSpin(b, r);
       this.hits++;
     }
 
